@@ -96,7 +96,8 @@ class productManager {
 }
 
 const addingProduct = new productManager();
-const objetoDePrueba = {
+addingProduct.addProduct(objetoDePrueba, objetoDePrueba2);
+const objetoDePrueba1 = {
   title: shirt,
   description: summerWhiteShirt,
   price: 1000,
@@ -114,6 +115,76 @@ const objetoDePrueba2 = {
   stock: 25,
 };
 
-addingProduct.addProduct(objetoDePrueba, objetoDePrueba2);
-
+const objetoDePrueba3 = {
+  title: dress,
+  description: summerPinkDress,
+  price: 1900,
+  thumbnail: thumbnail,
+  code: 2340,
+  stock: 20,
+};
+const objetoDePrueba4 = {
+  title: bikini,
+  description: summerWhitebikini,
+  price: 2000,
+  thumbnail: thumbnail,
+  code: 2341,
+  stock: 20,
+};
+const objetoDePrueba5 = {
+  title: glasses,
+  description: redGlasses,
+  price: 1300,
+  thumbnail: thumbnail,
+  code: 2342,
+  stock: 20,
+};
+const objetoDePrueba6 = {
+  title: croptop,
+  description: blackCroptop,
+  price: 1100,
+  thumbnail: thumbnail,
+  code: 2343,
+  stock: 20,
+};
+const objetoDePrueba7 = {
+  title: t.shirt,
+  description: summert.TShirt,
+  price: 1000,
+  thumbnail: thumbnail,
+  code: 2344,
+  stock: 20,
+};
+const objetoDePrueba8 = {
+  title: trousers,
+  description: winterTrousers,
+  price: 2000,
+  thumbnail: thumbnail,
+  code: 2345,
+  stock: 20,
+};
+const objetoDePrueba9 = {
+  title: pants,
+  description: summerPants,
+  price: 3500,
+  thumbnail: thumbnail,
+  code: 2346,
+  stock: 20,
+};
+const objetoDePrueba10 = {
+  title: shorts2,
+  description: summerShorts2,
+  price: 1600,
+  thumbnail: thumbnail,
+  code: 2347,
+  stock: 20,
+};
+const objetoDePrueba11 = {
+  title: skirt,
+  description: summerSkirt,
+  price: 1800,
+  thumbnail: thumbnail,
+  code: 2348,
+  stock: 20,
+};
 module.exports = productManager;
