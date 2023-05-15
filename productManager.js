@@ -3,9 +3,26 @@ const fs = require("fs");
 class productManager {
   constructor() {
     this.path = "./products.json";
-    this.products = [];
+    this.products = [
+      {
+        title: " dress",
+        description: "summerPinkDress",
+        price: 1900,
+        thumbnail: " thumbnail",
+        code: 2340,
+        stock: 20,
+      },
 
-    const productsString = fs.readFileSync("this.path", "utf-8");
+      {
+        title: " short",
+        description: "summerPinkShort",
+        price: 1900,
+        thumbnail: " thumbnail",
+        code: 2341,
+        stock: 20,
+      },
+    ];
+    const productsString = fs.readFileSync(this.path, "utf-8");
     const products = JSON.parse(productsString);
     this.products = products;
   }
@@ -36,9 +53,8 @@ class productManager {
     return ++maxId;
   }
 
-  getProduct() {
+  getProducts() {
     const productsArray = Object.entries(this.products);
-    console.log(productsArray);
     const productsString = fs.readFileSync("this.path", "utf-8");
     const products = JSON.parse(productsString);
     this.products = products;
@@ -66,7 +82,7 @@ class productManager {
   }
 
   upDateProduct(id, key, value) {
-    this.products = JSON.parse(fs.readFileSync("this.path", "utf-8"));
+    this.products = JSON.parse(fs.readFileSync(this.path, "utf-8"));
     if (key == "id") {
       return console.log("is not possible to modify the id field");
     } else if (this.products.find((p) => p.id === id)) {
@@ -80,7 +96,7 @@ class productManager {
   }
 
   deleteProduct(id) {
-    this.products = JSON.parse(fs.readFileSync("this.path", "utf-8"));
+    this.products = JSON.parse(fs.readFileSync(this.path, "utf-8"));
     if (this.product.find((p) => p.id === id)) {
       this.products.splice(
         this.products.indexOf(this.product.find((p) => p.id === id)),
@@ -94,97 +110,4 @@ class productManager {
     }
   }
 }
-
-const addingProduct = new productManager();
-addingProduct.addProduct(objetoDePrueba, objetoDePrueba2);
-const objetoDePrueba1 = {
-  title: shirt,
-  description: summerWhiteShirt,
-  price: 1000,
-  thumbnail: thumbnail,
-  code: 2346,
-  stock: 20,
-};
-
-const objetoDePrueba2 = {
-  title: shorts,
-  description: summerShorts,
-  price: 1000,
-  thumbnail: thumbnail2,
-  code: 2347,
-  stock: 25,
-};
-
-const objetoDePrueba3 = {
-  title: dress,
-  description: summerPinkDress,
-  price: 1900,
-  thumbnail: thumbnail,
-  code: 2340,
-  stock: 20,
-};
-const objetoDePrueba4 = {
-  title: bikini,
-  description: summerWhitebikini,
-  price: 2000,
-  thumbnail: thumbnail,
-  code: 2341,
-  stock: 20,
-};
-const objetoDePrueba5 = {
-  title: glasses,
-  description: redGlasses,
-  price: 1300,
-  thumbnail: thumbnail,
-  code: 2342,
-  stock: 20,
-};
-const objetoDePrueba6 = {
-  title: croptop,
-  description: blackCroptop,
-  price: 1100,
-  thumbnail: thumbnail,
-  code: 2343,
-  stock: 20,
-};
-const objetoDePrueba7 = {
-  title: t.shirt,
-  description: summert.TShirt,
-  price: 1000,
-  thumbnail: thumbnail,
-  code: 2344,
-  stock: 20,
-};
-const objetoDePrueba8 = {
-  title: trousers,
-  description: winterTrousers,
-  price: 2000,
-  thumbnail: thumbnail,
-  code: 2345,
-  stock: 20,
-};
-const objetoDePrueba9 = {
-  title: pants,
-  description: summerPants,
-  price: 3500,
-  thumbnail: thumbnail,
-  code: 2346,
-  stock: 20,
-};
-const objetoDePrueba10 = {
-  title: shorts2,
-  description: summerShorts2,
-  price: 1600,
-  thumbnail: thumbnail,
-  code: 2347,
-  stock: 20,
-};
-const objetoDePrueba11 = {
-  title: skirt,
-  description: summerSkirt,
-  price: 1800,
-  thumbnail: thumbnail,
-  code: 2348,
-  stock: 20,
-};
 module.exports = productManager;
