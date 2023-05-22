@@ -1,15 +1,13 @@
 const express = require("express");
-const productManager = require("./productManager.js");
+const productManager = require("./products.json");
 const app = express();
 const port = 8080;
 app.use(express.urlencoded({ extended: true }));
 
-const products = new productManager();
-
 app.get("/products", (req, res) => {
   const limit = req.query.limit;
   if (req.query && limit) {
-    const productFilterByLimit = products.slice(0, 6);
+    const productFilterByLimit = productManager.slice(0, limit);
     return res.json({
       status: "succes",
       msg: "five products found",
@@ -19,24 +17,23 @@ app.get("/products", (req, res) => {
     return res.json({
       status: "succes",
       msg: "these are all the products  ",
-      data: products,
+      data: productManager,
     });
   }
 });
-
-app.get("/products/:id", (req, res) => {
+app.get(`/products/:id`, (req, res) => {
   const id = req.params.id;
-  const product = product.find((p) => p.id == id);
+  const product = productManager.find((p) => p.id == id);
   if (product) {
     return res.json({
-      status: "success",
-      msg: "product find",
-      data: products.id,
+      status: `success`,
+      msg: `product found`,
+      data: product,
     });
   } else {
     return res.json({
-      status: "error ",
-      msg: "product is not found",
+      status: `error`,
+      msg: `product is not found`,
       data: {},
     });
   }

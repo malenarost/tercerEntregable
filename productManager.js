@@ -3,25 +3,8 @@ const fs = require("fs");
 class productManager {
   constructor() {
     this.path = "./products.json";
-    this.products = [
-      {
-        title: " dress",
-        description: "summerPinkDress",
-        price: 1900,
-        thumbnail: " thumbnail",
-        code: 2340,
-        stock: 20,
-      },
+    this.products = [];
 
-      {
-        title: " short",
-        description: "summerPinkShort",
-        price: 1900,
-        thumbnail: " thumbnail",
-        code: 2341,
-        stock: 20,
-      },
-    ];
     const productsString = fs.readFileSync(this.path, "utf-8");
     const products = JSON.parse(productsString);
     this.products = products;
